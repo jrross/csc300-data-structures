@@ -4,13 +4,14 @@ using namespace std;
 
 #ifndef POINT_H
 #define POINT_H 
-class point
+class Point
 {
 	public: 
 
-	point(double a = 0, double b = 0, double c = 0);
+	Point(double a = 0, double b = 0, double c = 0);
 	double pointGet(int g) const;
-	void pointCopy(point a);
+	void pointCopy(Point a);
+	friend ostream& operator<<(ostream &out, Point &p);
 
 	private:
 

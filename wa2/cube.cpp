@@ -1,6 +1,6 @@
 #include "cube.h"
 
-cube::cube (point p, double a, double b, double c)
+Cube::Cube (Point p, double a, double b, double c)
 {
 	pc.pointCopy(p);
 	x = a;
@@ -11,7 +11,7 @@ cube::cube (point p, double a, double b, double c)
 	cout << pc.pointGet(3) << endl;
 }
 
-bool cube::contains(const point &p) const
+bool Cube::contains(const Point &p) const
 {
 	if(p.pointGet(1) > pc.pointGet(1) + x)
 		return false;
@@ -22,9 +22,16 @@ bool cube::contains(const point &p) const
 	return true;
 }
 
-double cube::volume() const
+double Cube::volume() const
 {
 	double temp;
 	temp = x * y * z;
 	return temp;
+}
+
+ostream& operator<<(ostream &out, Cube &c)
+{
+	out << c.pc.pointGet(1) << "," << c.pc.pointGet(2) << "," <<
+	c.pc.pointGet(3) << " with dimensions: " << c.x << "x" <<
+	c.y << "x" << c.z;
 }

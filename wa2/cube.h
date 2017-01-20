@@ -2,17 +2,18 @@
 
 #ifndef CUBE_H
 #define CUBE_H
-class cube
+class Cube
 {
 	public:
 	
-	cube (point, double = 1.0, double = 1.0, double = 1.0);
-	bool contains(const point &p) const;
+	Cube (Point, double = 1.0, double = 1.0, double = 1.0);
+	bool contains(const Point &p) const;
 	double volume() const;
+	friend ostream& operator<<(ostream &out, Cube &c);	
 
 	private:
 	
-	point pc;
+	Point pc;
 	double x;
 	double y;
 	double z;

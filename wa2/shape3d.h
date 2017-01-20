@@ -6,7 +6,7 @@ class shape3D
 {
 	public:
 	
-	virtual bool contains(const point &p) const = 0;
+	virtual bool contains(const Point &p) const = 0;
 	virtual double volume() const = 0;
 };
 

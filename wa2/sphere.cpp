@@ -1,6 +1,6 @@
 #include "sphere.h"
 
-sphere::sphere(point p, double r)
+Sphere::Sphere(Point p, double r)
 {
 	ps.pointCopy(p);
 	radius = r;
@@ -9,7 +9,7 @@ sphere::sphere(point p, double r)
 	cout << ps.pointGet(3) << endl;
 }
 
-bool sphere::contains(const point &p) const
+bool Sphere::contains(const Point &p) const
 {
 	if (p.pointGet(1) > ps.pointGet(1) + radius ||
 	    p.pointGet(1) < ps.pointGet(1) - radius )
@@ -25,9 +25,15 @@ bool sphere::contains(const point &p) const
 	return true;
 }
 
-double sphere::volume() const
+double Sphere::volume() const
 {
 	double temp;
 	temp = (4.0 / 3.0) * 3.14159 * (radius * radius * radius);
 	return temp;
+}
+
+ostream& operator<<(ostream &out, Sphere &s)
+{
+	out << s.ps.pointGet(1) << "," << s.ps.pointGet(2) << "," <<
+	s.ps.pointGet(3) << " with a radius of: " << s.radius;
 }

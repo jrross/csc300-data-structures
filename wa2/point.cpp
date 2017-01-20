@@ -1,20 +1,20 @@
 #include "point.h"
 
-point::point(double a, double b, double c)
+Point::Point(double a, double b, double c)
 {
 	x = a;
 	y = b;
 	z = c;
 }
 
-void  point::pointCopy(point a)
+void  Point::pointCopy(Point a)
 {
 	x = a.pointGet(1);
 	y = a.pointGet(2);
 	z = a.pointGet(3);
 }
 
-double point::pointGet(int g) const
+double Point::pointGet(int g) const
 {
 	if(g == 1)
 		return x;
@@ -24,4 +24,9 @@ double point::pointGet(int g) const
 		return z;
 	else
 		return 0;
+}
+
+ostream& operator<<(ostream &out, Point &p)
+{
+	out << p.x << "," << p.y << "," << p.z;
 }

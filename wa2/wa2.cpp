@@ -1,27 +1,28 @@
 #include <iostream>
+#include <vector>
 #include "point.h"
-#include "cube.h"
-#include "sphere.h"
 #include "shape3d.h"
+#include "sphere.h"
+#include "cube.h"
 
 using namespace std;
 
 int main()
 {
-	point p(1, 1, 1);
-	sphere s(p, 2);
-	cube c(p, 1, 5, 3);
+   Point p(1, 1, 1);          /// Create a Point at coordinate [1,1,1]
+   Sphere sphere(p);          /// Create a Sphere at point p
+   Cube cube(p);              /// Create a Cube at point p
 
-	point q(3 , 4.8, 2);
-	if (s.contains(q))
-		cout << "Things worked" << endl;
-	cout << s.volume() << endl;
-	if(c.contains(q))
-		cout << "Things worked x2" << endl;
-	cout << c.volume() << endl;
+   Point q(1.1, 1.1, 1.1);    /// Create a Point at coordinate [1.1,1.1,1.1]
+
+   if (sphere.contains(q))
+      cout << "Sphere at " << sphere << " contains point at " << q << "\n";
+
+   if (cube.contains(q))
+      cout << "Cube at " << cube << " contains point at " << q << "\n";
 
 
-return 0;
-
+   cout << "Volume of shape = " << sphere.volume() << endl;
+   cout << "Volume of shape = " << cube.volume() << endl;
+   return 0;
 }
-
