@@ -1,27 +1,43 @@
 #include "point.h"
+#include "shape3d.h"
 
 #ifndef SPHERE_H
 #define SPHERE_H
-class sphere
+class sphere : public shape3D
 {
 	public:
 
-	sphere (point);
+	sphere (point, double);
+	bool contains(const point &p) const = 0;
 
 	private:
 
 	double radius;
-	double x;
-	double y;
-	double z;
-
+	point ps;
 };
 
-sphere::sphere(point p)
+sphere::sphere(point p, double r)
 {
-	radius = 5.0;
-	x = p.pointGet(1);
-	y = p.pointGet(2);
-	z = p.pointGet(3);
+	ps.pointCopy(p);
+	radius = r;
+	cout << "Created sphere of radius " << radius << " at point ";
+	cout << ps.pointGet(1) << "," << ps.pointGet(2) << ",";
+	cout << ps.pointGet(3) << endl;
+}
+
+	bool sphere::contains(const point &p) const = 0
+{
+	if (p.pointGet(1) > ps.pointGet(1) + radius ||
+	    p.pointGet(1) < ps.pointGet(1) - radius )
+		return false;
+
+	if (p.pointGet(2) > ps.pointGet(2) + radius ||
+	    p.pointGet(2) < ps.pointGet(2) - radius )
+		return false;
+
+	if (p.pointGet(3) > ps.pointGet(3) + radius ||
+	    p.pointGet(3) < ps.pointGet(3) - radius )
+		return false;
+	return true;
 }
 #endif

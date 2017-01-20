@@ -6,22 +6,25 @@ class cube
 {
 	public:
 	
-	cube (point);
+	cube (point, double, double, double);
 
 	private:
 	
-	double sideSize;
+	point pc;
 	double x;
 	double y;
 	double z;
 
 };
 
-cube::cube (point p)
+cube::cube (point p, double a, double b, double c)
 {
-	sideSize = 5.0;
-	x = p.pointGet(1);
-	y = p.pointGet(2);
-	z = p.pointGet(3);
+	pc.pointCopy(p);
+	x = a;
+	y = b;
+	z = c;
+	cout << "Created cube of dimensions " << x << "x" << y << "x" << z;
+	cout << " at point " << pc.pointGet(1) << "," << pc.pointGet(2) << ",";
+	cout << pc.pointGet(3) << endl;
 }
 #endif

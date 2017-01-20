@@ -10,6 +10,7 @@ class point
 
 	point(double, double, double);
 	double pointGet(int g);
+	void pointCopy(point a);
 
 	private:
 
@@ -23,6 +24,13 @@ point::point(double a = 0, double b = 0, double c = 0)
 	x = a;
 	y = b;
 	z = c;
+}
+
+void  point::pointCopy(point a)
+{
+	x = a.pointGet(1);
+	y = a.pointGet(2);
+	z = a.pointGet(3);
 }
 
 double point::pointGet(int g)
