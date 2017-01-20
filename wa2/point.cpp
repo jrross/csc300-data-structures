@@ -9,14 +9,14 @@ Point::Point(double a, double b, double c)
 
 void  Point::pointCopy(Point a)
 {
-	x = a.pointGet(1);
+	x = a.pointGet(1); //does a straight copy from provided point using pointGet
 	y = a.pointGet(2);
 	z = a.pointGet(3);
 }
 
 double Point::pointGet(int g) const
 {
-	if(g == 1)
+	if(g == 1)        //takes 1, 2, or 3 for corresponding xyz value
 		return x;
 	if(g == 2)
 		return y;

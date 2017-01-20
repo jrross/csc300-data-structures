@@ -15,6 +15,6 @@ class Sphere : public shape3D
 	private:
 
 	double radius;
-	Point ps;
+	Point ps;  //point of the center of the sphere
 };
 #endif

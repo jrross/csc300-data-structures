@@ -13,7 +13,7 @@ class Cube
 
 	private:
 	
-	Point pc;
+	Point pc;  //starting point for the cube
 	double x;
 	double y;
 	double z;

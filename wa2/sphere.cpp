@@ -1,5 +1,19 @@
+/***************************************************************************//**
+ * @file sphere.cpp
+ ******************************************************************************/
+
 #include "sphere.h"
 
+
+/***************************************************************************//**
+ * @brief Constructor for a Sphere object, the point provided will be the center
+	  of the sphere.
+ *
+ * @param[in] p - the location of the object
+ * @param[in] a - length of the object in the x-dimension
+ * @param[in] b - length of the object in the y-dimension
+ * @param[in] c - length of the object in the z-dimension
+ ******************************************************************************/
 Sphere::Sphere(Point p, double r)
 {
 	ps.pointCopy(p);
@@ -11,9 +25,9 @@ Sphere::Sphere(Point p, double r)
 
 bool Sphere::contains(const Point &p) const
 {
-	if (p.pointGet(1) > ps.pointGet(1) + radius ||
-	    p.pointGet(1) < ps.pointGet(1) - radius )
-		return false;
+	if (p.pointGet(1) > ps.pointGet(1) + radius ||    //checks to see if the point is within the
+	    p.pointGet(1) < ps.pointGet(1) - radius )     //length of the radius from the center in
+		return false;                             //the + and - coordinate direction.
 
 	if (p.pointGet(2) > ps.pointGet(2) + radius ||
 	    p.pointGet(2) < ps.pointGet(2) - radius )

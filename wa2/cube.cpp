@@ -1,5 +1,19 @@
+/***************************************************************************//**
+ * @file cube.cpp
+ ******************************************************************************/
+
+
 #include "cube.h"
 
+/***************************************************************************//**
+ * @brief Constructor for a Cube object, Cubes are created in the positive x, y
+	  , and z direction from the point provided.
+ *
+ * @param[in] p - the location of the object
+ * @param[in] a - length of the object in the x-dimension
+ * @param[in] b - length of the object in the y-dimension
+ * @param[in] c - length of the object in the z-dimension
+ ******************************************************************************/
 Cube::Cube (Point p, double a, double b, double c)
 {
 	pc.pointCopy(p);
@@ -13,11 +27,14 @@ Cube::Cube (Point p, double a, double b, double c)
 
 bool Cube::contains(const Point &p) const
 {
-	if(p.pointGet(1) > pc.pointGet(1) + x)
+	if(p.pointGet(1) > pc.pointGet(1) + x ||      //checks to see if the point is within the 
+	   p.pointGet(1) < pc.pointGet(1))            //the lengths of the cube for each dimension.
 		return false;
-	if(p.pointGet(2) > pc.pointGet(2) + y)
+	if(p.pointGet(2) > pc.pointGet(2) + y ||
+	   p.pointGet(2) < pc.pointGet(2))
 		return false;
-	if(p.pointGet(3) > pc.pointGet(3) + z)
+	if(p.pointGet(3) > pc.pointGet(3) + z ||
+	   p.pointGet(3) < pc.pointGet(3))
 		return false;
 	return true;
 }
