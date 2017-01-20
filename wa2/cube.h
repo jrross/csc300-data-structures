@@ -6,7 +6,9 @@ class cube
 {
 	public:
 	
-	cube (point, double, double, double);
+	cube (point, double = 1.0, double = 1.0, double = 1.0);
+	bool contains(const point &p) const;
+	double volume() const;
 
 	private:
 	
@@ -17,14 +19,4 @@ class cube
 
 };
 
-cube::cube (point p, double a, double b, double c)
-{
-	pc.pointCopy(p);
-	x = a;
-	y = b;
-	z = c;
-	cout << "Created cube of dimensions " << x << "x" << y << "x" << z;
-	cout << " at point " << pc.pointGet(1) << "," << pc.pointGet(2) << ",";
-	cout << pc.pointGet(3) << endl;
-}
 #endif

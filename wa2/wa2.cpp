@@ -8,8 +8,20 @@ using namespace std;
 
 int main()
 {
-	point p(12, 6, 14);
-	cube c(p, 15, 14, 13);
-	sphere s(p, 13);
+	point p(1, 1, 1);
+	sphere s(p, 2);
+	cube c(p, 1, 5, 3);
+
+	point q(3 , 4.8, 2);
+	if (s.contains(q))
+		cout << "Things worked" << endl;
+	cout << s.volume() << endl;
+	if(c.contains(q))
+		cout << "Things worked x2" << endl;
+	cout << c.volume() << endl;
+
+
+return 0;
+
 }
 
