@@ -1,0 +1,32 @@
+Jeff,
+
+    You code compiles but has warnings.  Warnings are usually bugs waiting to
+happen so it's a good idea to clean them up before submitting code.
+
+One comment is to use the define constants for a better approximation of things
+like PI.
+
+#include<cmath>
+#define _USE_MATH_DEFINES
+.
+.
+.
+temp = (4.0 / 3.0) * M_PI * (radius * radius * radius);
+instead of
+temp = (4.0 / 3.0) * 3.14159 * (radius * radius * radius);
+
+Also, the warnings are coming because you're not returning anything from
+your overloaded operator<< friend functions.  Your interface says that you
+will return an ostream& so you should do this:
+
+ostream& operator<<(ostream &out, Cube &c)
+{
+	out << c.pc.pointGet(1) << "," << c.pc.pointGet(2) << "," <<
+	c.pc.pointGet(3) << " with dimensions: " << c.x << "x" <<
+	c.y << "x" << c.z;
+        return out;                <<<<<<<<< add this line
+}
+
+Overall pretty good job.  Nice job on the function headers.
+
+10/10
