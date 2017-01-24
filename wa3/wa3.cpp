@@ -1,14 +1,15 @@
 #include <iostream>
 #include <GL/freeglut.h>
+
 using namespace std;
 
 #define ESCAPE_KEY 27
-
 
 void display() 
 {
     glClear(GL_COLOR_BUFFER_BIT);
     glutSwapBuffers();
+	cout << "Changed Display Dimensions" << endl;
 }
 
 void keyboard(unsigned char key, int x, int y)
@@ -29,7 +30,7 @@ void mouseClick(int button, int state, int x, int y)
 			break;
 		case 2: cout << "Right click ";
 			break;
-		case 3: cout << "Scroll wheel up ";
+		case 3: cout << "Scroll wheel forward ";
 			break;
 		case 4: cout << "Scroll wheel down ";
 	}
@@ -51,7 +52,7 @@ int main(int argc, char** argv)
 	glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA);
 	glutInitWindowSize(640, 480);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Testerino");
+	glutCreateWindow("wa3");
  	glutDisplayFunc(display);
     	glutKeyboardFunc(keyboard);
     	glutMouseFunc(mouseClick);
