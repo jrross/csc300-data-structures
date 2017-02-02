@@ -4,7 +4,7 @@
 using namespace std;
 
 
-//g++ -o test linkedList.h linkedlist.cpp main.cpp node.cpp node.h -std=c++0x -g
+//g++ -o test linkedList.h linkedList.cpp main.cpp node.cpp node.h -std=c++0x -g
 LinkedList::LinkedList()
 {
 	head = nullptr;
