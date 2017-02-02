@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-   LinkedList ll;
 
+   LinkedList ll;
    for (int i = 0 ; i < 5 ; i++)
       ll.append(new Node(i));
 
@@ -16,14 +16,14 @@ int main()
 
    for (int i = 0 ; i < 5 ; i++)
    {
-      Node *curNode = ll.find(i);
-      ll.insertAfter(curNode, new Node((i+1)*2));
-   }
 
+     Node *curNode = ll.find(i);
+     ll.insertAfter(curNode, new Node((i+1)*2));
+
+   }
    for (int i = 0 ; i < 5 ; i++)
    {
       Node *curNode = ll.find(i);
-      ll.removeAfter(curNode);
    }
 
    cout << "Before exiting:\n";
