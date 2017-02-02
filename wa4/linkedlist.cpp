@@ -1,10 +1,10 @@
-#include "linkedlist.h"
+#include "linkedList.h"
 #include <iostream>
 
 using namespace std;
 
 
-//g++ -o test linkedlist.h linkedlist.cpp main.cpp node.cpp node.h -std=c++0x -g
+//g++ -o test linkedList.h linkedlist.cpp main.cpp node.cpp node.h -std=c++0x -g
 LinkedList::LinkedList()
 {
 	head = nullptr;
