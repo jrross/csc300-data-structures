@@ -1,0 +1,36 @@
+- Program compiles without errors or warnings
+- Escape key exits program
+- 'X' button exits program
+- Display events reported
+- Key presses reported (-.5)
+   - Key presses are lost when first pressing a key or switching from one
+     key to another.  Example:
+
+      - Start program press 'a' key
+
+        Expected output:
+           a key pressed at location: 243, 245
+           Changed Display Dimensions
+           No Actions.
+        Actual output:
+           Changed Display Dimensions
+           No Actions.
+           No Actions.
+
+- Mouse click events reported (-.5)
+   - Similar to results from pressing a key.  Reporting of events are
+     delayed by one event
+
+- Extra files (function.cpp) in the wa3 sub-directory
+- No data structure used to store event history (parallel arrays)
+- Events passed as parallel arrays
+- Events recorded as strings
+- Message selection done via if-else blocks
+
+Would like to see more modularity
+Would like to see separation of interface and implementation
+
+Overall a good job, Jeff.  We'll do some code reviews next week to discuss
+some things about the code that might be improved.
+
+9/10
