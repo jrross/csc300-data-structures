@@ -24,6 +24,7 @@ int main()
    for (int i = 0 ; i < 5 ; i++)
    {
       Node *curNode = ll.find(i);
+      ll.removeAfter(curNode);
    }
 
    cout << "Before exiting:\n";
