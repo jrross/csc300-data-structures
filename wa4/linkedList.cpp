@@ -4,7 +4,7 @@
 using namespace std;
 
 
-//g++ -o test linkedList.h linkedList.cpp main.cpp node.cpp node.h -std=c++0x -g
+//g++ -o main linkedList.h linkedList.cpp main.cpp node.cpp node.h -std=c++0x -g
 LinkedList::LinkedList()
 {
 	head = nullptr;
@@ -68,25 +68,28 @@ void LinkedList::insertAfter(Node* curNode, Node* newNode)
 
 void LinkedList::removeAfter(Node* curNode)
 {
-	if (curNode == nullptr)
-		return;
-	if (curNode == tail) //if curNode is the last node
-		return;
-
-	Node *temp;
-
-	if (curNode->next == tail) //if curNode is second to last
+	if (curNode == nullptr && head != nullptr)
 	{
-		temp = curNode->next;
-		tail = curNode;
-		delete temp;
-		curNode->next = nullptr;
-		return;
+	Node *sucNode = head->next;
+	head = sucNode;
+
+	if (sucNode == nullptr)
+		tail == nullptr;
+	
+	delete sucNode;
 	}
 
+	else if( curNode->next != nullptr)
+	{
+	Node *temp;
 	temp = curNode->next;
 	curNode->next = temp->next;
 	delete temp;
+	
+	if (curNode->next == nullptr)
+		tail = curNode->next;
+	}
+
 	
 }
 
