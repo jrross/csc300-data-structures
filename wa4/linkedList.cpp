@@ -13,6 +13,13 @@ LinkedList::LinkedList()
 
 LinkedList::~LinkedList()
 {
+	tail = head;
+	while (tail != nullptr)
+	{
+		head = head->next;
+		delete tail;
+		tail = head;
+	}
 }
 
 
@@ -71,12 +78,13 @@ void LinkedList::removeAfter(Node* curNode)
 	if (curNode == nullptr && head != nullptr)
 	{
 	Node *sucNode = head->next;
+	Node *temp;
+	temp = head;
 	head = sucNode;
+	delete temp;
 
 	if (sucNode == nullptr)
 		tail == nullptr;
-	
-	delete sucNode;
 	}
 
 	else if( curNode->next != nullptr)
@@ -87,7 +95,7 @@ void LinkedList::removeAfter(Node* curNode)
 	delete temp;
 	
 	if (curNode->next == nullptr)
-		tail = curNode->next;
+		tail = curNode;
 	}
 
 	
