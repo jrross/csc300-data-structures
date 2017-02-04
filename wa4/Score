@@ -1,0 +1,21 @@
+- Program does not compile without warnings and errors
+g++ -Wall -O3 -std=c++11 -I.   -c -o linkedList.o linkedList.cpp
+linkedList.cpp: In member function ‘void LinkedList::removeAfter(Node*)’:
+linkedList.cpp:87:8: warning: statement has no effect [-Wunused-value]
+   tail == nullptr;
+   ~~~~~^~~~~~~~~~
+
+- Program runs
+- Program runs and gets the right answers
+- Program does not leak memory
+------------------------------------------------------------------------------
+
+Good job, Jeff.  Warnings are typically bugs waiting to happen.  This particular
+warning is telling you that you're not assiging a nullptr to tail like you
+might think you are.  The double == is comparison, not assignment.
+
+   In this case I think you're safe since to satisfy the sucNode == nullptr
+then head == nullptr and subsequent operations do not reference through tail
+before it's made the correct value.
+
+10/10
