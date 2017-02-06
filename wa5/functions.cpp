@@ -6,6 +6,7 @@ int used = 0;
 void DrawFilledRectangle(float x1, float y1, float x2, float y2, const float color[])
 {
    glBegin(GL_POLYGON);
+      glColor3fv(color);
       glVertex2f(x1, y1);
       glVertex2f(x2, y1);
       glVertex2f(x2, y2);
@@ -24,7 +25,7 @@ void display()
 		x = glutGet(GLUT_WINDOW_WIDTH) / 2;
 		y = glutGet(GLUT_WINDOW_HEIGHT) / 2;
 		r.setCenter(x, y);
-		float color[3] = {1.0, 0.0, 0.0};
+		float color[3] = { 1.0, 0.0, 0.0};
 		float d[4];
 		d[0] = r.getx1();
 		d[1] = r.gety1();
