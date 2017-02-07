@@ -74,7 +74,7 @@ void DrawCharacter(char ch, int x, int y, const float color[])
    glRasterPos2i(x, y);
    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, ch);
 }
-ographic projection
+					// ographic projection
     glLoadIdentity();                   // initialize transformation matrix
     gluOrtho2D( 0.0, w, 0.0, h );       // make OpenGL coordinates
     glViewport( 0, 0, w, h );           // the same as the screen coordinates
