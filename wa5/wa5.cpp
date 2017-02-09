@@ -1,6 +1,6 @@
 #include "functions.h"
 
-	//g++ -o wa5 wa5.cpp functions.cpp functions.h rectangle.h rectangle.cpp -lglut -lGL -lGLU -lm
+	//g++ -o wa5 wa5.cpp functions.cpp functions.h events.h events.cpp -lglut -lGL -lGLU -lm
 
 int main(int argc, char** argv)
 {

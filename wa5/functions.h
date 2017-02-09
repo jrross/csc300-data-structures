@@ -1,5 +1,6 @@
 #include <iostream>
 #include <GL/freeglut.h>
+#include "events.h"
 
 using namespace std;
 
@@ -9,3 +10,4 @@ void display();
 void keyboard(unsigned char key, int x, int y);
 void mouseClick(int button, int state, int x, int y);
 void DrawCharacter(char ch, int x, int y, const float color[]);
+void print(event *ev);
