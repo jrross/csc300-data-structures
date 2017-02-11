@@ -1,36 +1,42 @@
-- Program compiles without errors or warnings
-- Escape key exits program
-- 'X' button exits program
-- Display events reported
-- Key presses reported (-.5)
-   - Key presses are lost when first pressing a key or switching from one
-     key to another.  Example:
+Yes Makefile or compilation instructions included in repo
+No  Program compiles without errors and warnings
+functions.cpp: In function ‘void keyboard(unsigned char, int, int)’:
+functions.cpp:28:9: warning: deleting object of abstract class type ‘event’ which has non-virtual destructor will cause undefined behaviour [-Wdelete-non-virtual-dtor]
+  delete ev;
+         ^
+events.cpp: In member function ‘virtual void mouse::draw()’:
+events.cpp:10:8: warning: unused variable ‘w’ [-Wunused-variable]
+  float w = glutGet(GLUT_WINDOW_WIDTH);
 
-      - Start program press 'a' key
+- Application closes cleanly via upper right 'X' or <esc> key
+No  Left mouse down click in window draws a filled red square at location (-1)
+   - Red square always appears in the middle of display
+Yes Typing character from keyboard renders letter in window at mouse location
+- Program does not leak memory
+------ Bonus -----
+- Middle mouse down click draws green square at location
+- Right mouse down click draws blue square at location
+Yes <backspace> key clear the display of all squares and text (+.5)
+-------------------------------------------------------------------------------
 
-        Expected output:
-           a key pressed at location: 243, 245
-           Changed Display Dimensions
-           No Actions.
-        Actual output:
-           Changed Display Dimensions
-           No Actions.
-           No Actions.
+Comments:
+   - Text and graphics disappear when resizing window
+   - Window is cleared before drawing new text/graphic
+   - Mouse and kb events both have an x and y member data but they both
+     derive from Event so it would be better to put them in Event
+   - You have an x and y coordinate for mouse events, this simple change:
 
-- Mouse click events reported (-.5)
-   - Similar to results from pressing a key.  Reporting of events are
-     delayed by one event
+     y = h - y;
+     DrawFilledRectangle(x-10, y-10, x+10, y+10, color);
 
-- Extra files (function.cpp) in the wa3 sub-directory
-- No data structure used to store event history (parallel arrays)
-- Events passed as parallel arrays
-- Events recorded as strings
-- Message selection done via if-else blocks
+     would place the square at the mouse click.
+   - Calling a destructor on an object that is derived from an abstract
+     base class can cause problems if the abstract base class does not have
+     a virtual destructor.  Add this to your Event class:
 
-Would like to see more modularity
-Would like to see separation of interface and implementation
+        virtual ~Event() { }
 
-Overall a good job, Jeff.  We'll do some code reviews next week to discuss
-some things about the code that might be improved.
+     to prevent undefined behavior.
 
-9/10
+Generally a good job, Jeff.  
+11.5/12
