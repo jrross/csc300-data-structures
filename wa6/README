@@ -1,0 +1,15 @@
+Build the program by changing insert function in the WA6.cpp file so that it
+performs AVL insertions.
+
+The Makefile will build a main executable with the following command:
+
+% make
+
+Once you build the main executable, you can run it and a blank window will
+open.  Enter integers followed by <enter> and the program will call the insert
+routine followed by displaying the AVL tree that is created.  The input is
+not very robust (i.e. typing number and backspacing).  No error checking so
+if you put in letters instead of numbers the results are undefined.  The
+display is meant as a way to help debug what your routine is doing.
+
+The supplied insert function does just a regular BST insert (no balancing).
