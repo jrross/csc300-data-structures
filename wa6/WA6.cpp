@@ -24,7 +24,7 @@ Node* insert(Node* root, int data)
 	int d = 0; 		// an integer which signals if it is to the right or left
 	int l;
 	int r;
-
+	bool test;
 	while (temp != nullptr)
 	{
 		if(data > temp->data)
@@ -71,8 +71,12 @@ Node* insert(Node* root, int data)
 		if( temp->data > prev->data)
 			swap(temp, prev);
 		if( prev2->data > temp->data)
-			swap(prev2, temp);		
-		rotate(prev, temp, prev2);
+			swap(prev2, temp);
+		if (prev2->parent->right == prev2)	//test for right child
+			test = true;
+		else
+			test = false;
+		rotate(prev, temp, prev2, test);
 	}
 	}
 	root = temp;
@@ -81,9 +85,10 @@ Node* insert(Node* root, int data)
 
 
 
-void rotate(Node* &large, Node* &mid, Node* &small)
+void rotate(Node* &large, Node* &mid, Node* &small, bool r)
 {
 	int height;
+	
 	if (mid->parent == small && small->parent == large) //left right
 	{
 		mid->parent = large;
@@ -101,7 +106,12 @@ void rotate(Node* &large, Node* &mid, Node* &small)
 	if (small->parent == mid && mid->parent == large)//left left
 	{
 		if(large->parent)
-			large->parent->left = mid;
+		{
+			if(r == true)
+				large->parent->right = mid;
+			if(r == false)
+				large->parent->left = mid;
+		}
 		mid->parent = large->parent;
 		large->parent = mid;
 		large->left = mid->right;
@@ -130,7 +140,12 @@ void rotate(Node* &large, Node* &mid, Node* &small)
 	if (large->parent == mid && mid->parent == small) //right right
 	{
 		if(small->parent)
-			small->parent->right = mid;
+		{
+			if (r == true)
+				small->parent->right = mid;
+			if (r == false)
+				small->parent->left = mid;
+		}
 		mid->parent = small->parent;
 		small->parent = mid;
 		small->right = mid->left;
