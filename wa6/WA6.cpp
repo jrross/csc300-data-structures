@@ -55,11 +55,11 @@ Node* insert(Node* root, int data)
 	temp = temp->parent;
 	temp->ht = prev->ht + 1;
 	if ( temp->right == nullptr)
-		r = 0;
+		r = -1;
 	else
 		r = temp->right->ht;
 	if ( temp->left == nullptr)
-		l = 0;
+		l = -1;
 	else
 		l = temp->left->ht;
 
@@ -73,8 +73,11 @@ Node* insert(Node* root, int data)
 		if( prev2->data > prev->data)
 			swap(prev2, prev);		
 		rotate(temp, prev, prev2);
-		temp = prev;
-		cout << "here";
+		swap(temp, prev);
+		//cout << temp->data << " " << temp << " " << temp->ht << endl;
+		//cout << temp->left->data << " " << temp->left->parent << " " << temp->left->ht << endl;
+		//cout << temp->right->data << " " << temp->right->parent << " " << temp->right->ht <<endl;
+		//cout << endl;
 
 	}
 	}
@@ -99,7 +102,6 @@ void rotate(Node* &large, Node* &mid, Node* &small)
 	{
 		mid->parent = large->parent;
 		large->parent = mid;
-		small->parent = mid;
 		large->left = mid->right;
 		mid->right = large;
 		mid->left = small;
@@ -116,11 +118,10 @@ void rotate(Node* &large, Node* &mid, Node* &small)
 
 	}
 
-	if (large->parent == mid && large->parent == small) //right right
+	if (large->parent == mid && mid->parent == small) //right right
 	{
 		mid->parent = small->parent;
 		small->parent = mid;
-		large->parent = mid;
 		small->right = mid->left;
 		mid->right = large;
 		mid->left = small;
