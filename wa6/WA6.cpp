@@ -63,22 +63,16 @@ Node* insert(Node* root, int data)
 	else
 		l = temp->left->ht;
 
-	if ( l - r > 1 || l - r < -1)	//temp=large / prev = mid / prev2 = small
+	if ( l - r > 1 || l - r < -1)	//prev=large / temp = mid / prev2 = small
 	{
 
-		if( prev2->data > temp->data)
-			swap(prev2, temp);
-		if( prev->data > temp->data)
-			swap(prev, temp);
 		if( prev2->data > prev->data)
-			swap(prev2, prev);		
-		rotate(temp, prev, prev2);
-		swap(temp, prev);
-		//cout << temp->data << " " << temp << " " << temp->ht << endl;
-		//cout << temp->left->data << " " << temp->left->parent << " " << temp->left->ht << endl;
-		//cout << temp->right->data << " " << temp->right->parent << " " << temp->right->ht <<endl;
-		//cout << endl;
-
+			swap(prev2, prev);
+		if( temp->data > prev->data)
+			swap(temp, prev);
+		if( prev2->data > temp->data)
+			swap(prev2, temp);		
+		rotate(prev, temp, prev2);
 	}
 	}
 	root = temp;
@@ -89,23 +83,34 @@ Node* insert(Node* root, int data)
 
 void rotate(Node* &large, Node* &mid, Node* &small)
 {
+	int height;
 	if (mid->parent == small && small->parent == large) //left right
 	{
 		mid->parent = large;
 		small->parent = mid;
 		small->right = mid->left;
+		if (small->right != nullptr)
+			small->right->parent = small;
 		mid->left = small;
 		large->left = mid;
+		height = small->ht;
+		small->ht = mid->ht;
+		mid->ht = small->ht;
 	}
 
 	if (small->parent == mid && mid->parent == large)//left left
 	{
+		if(large->parent)
+			large->parent->left = mid;
 		mid->parent = large->parent;
 		large->parent = mid;
 		large->left = mid->right;
+		if(large->left != nullptr)
+			large->left->parent = large;
 		mid->right = large;
 		mid->left = small;
-		large->ht = small->ht;	
+		large->ht = large->ht - 2;
+			
 	}
 
 	if (mid->parent == large && large->parent == small) //right left
@@ -113,19 +118,27 @@ void rotate(Node* &large, Node* &mid, Node* &small)
 		mid->parent = small;
 		large->parent = mid;
 		large->left = mid->right;
+		if (large->left != nullptr)
+			large->left->parent = small;
 		mid->right = large;
 		small->right = mid;
-
+		height = large->ht;
+		large->ht = mid->ht;
+		mid->ht = height;
 	}
 
 	if (large->parent == mid && mid->parent == small) //right right
 	{
+		if(small->parent)
+			small->parent->right = mid;
 		mid->parent = small->parent;
 		small->parent = mid;
 		small->right = mid->left;
+		if (small->right != nullptr)
+			small->right->parent = small;
 		mid->right = large;
 		mid->left = small;
-		small->ht = large->ht;
+		small->ht = small->ht - 2;
 	}
 
 
