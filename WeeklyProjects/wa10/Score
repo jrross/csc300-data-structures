@@ -1,0 +1,45 @@
+Yes Program build without warnings or error
+No  DisjointSet passes unit tests
+Yes DisjointSet correctly supports porousity app
+===============================================================================
+
+This comment is in the disjoint.cpp file on the Union method:
+
+ *    * If both sets are the same rank, the set identifed as the second
+ *      parameter is chosen as the representative of the new, combined set and
+ *      the rank of the new set is increased by one.
+
+Your union looks like this:
+
+void DisjointSet::Union(long first, long second) 
+{ 
+	long int u1 = this->findSet(first);
+	long int u2 = this->findSet(second);
+	//already in same set
+	if(u1 == u2)		
+		return;
+	map<long int, Node*>::iterator it1;
+	map<long int, Node*>::iterator it2;
+	it1 = nodes.find(u1);
+    it2 = nodes.find(u2);
+
+	if(it1->second->rank >= it2->second->rank)
+	{
+	it2->second->parent = it1->second;                 <<<<<<<<<<<<<<<
+	it1->second->rank = it1->second->rank + it2->second->rank;
+	}
+	if(it2->second->rank > it1->second->rank)
+	{
+	it1->second->parent = it2->second;
+	it2->second->rank = it1->second->rank + it2->second->rank;
+	}
+}
+
+So you are implementing a different behavior.
+
+Lots of spam to the console.  Try to either clean this up or hide it behind
+conditional compilation (e.g. #ifdef DEBUG)
+
+Good job, Jeff
+
+11.5/12

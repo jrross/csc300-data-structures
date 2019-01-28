@@ -1,0 +1,13 @@
+Yes Program build without warnings or error
+Yes BST Sort correctly sorts values
+Yes BST Sort elapsed time grows roughly loglinear with the size of N
+No  Program runs without leaking memory *
+===============================================================================
+
+* The main.cpp from the WA8 assign page shows the bst and insert objects being
+  deleted right before exiting the program.
+
+I know you put some effort into this assignment Jeff.  I appreciate your
+persistence in making sure it was working.
+
+14.5/15

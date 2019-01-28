@@ -1,21 +1,19 @@
-/***************************************************************************//**
- * @file WA6.cpp
- ******************************************************************************/
-#include <iostream>
-#include "node.h"
-#include "WA6.h"
+#include "bstSort.h"
+BstSort::BstSort()
+{
+	root = nullptr;
+}
 
-using namespace std;
+BstSort::~BstSort()
+{
 
-/***************************************************************************//**
- * @brief reference insert node function
- ******************************************************************************/
-Node* insert(Node* root, int data)
+}
+void BstSort::addVal(int val)
 {
 	if (root == nullptr)
 	{
-		root = new Node(data);
-		return root;
+		root = new Node(val);
+		return;
 	}
 	
 	Node* temp = root;
@@ -24,10 +22,9 @@ Node* insert(Node* root, int data)
 	int d = 0; 		// an integer which signals if it is to the right or left
 	int l;
 	int r;
-	bool test;
 	while (temp != nullptr)
 	{
-		if(data > temp->data)
+		if(val >= temp->data)
 		{
 			d = 1;
 			prev = temp;
@@ -40,7 +37,7 @@ Node* insert(Node* root, int data)
 			temp = temp->left;
 		}
 	}
-	temp = new Node(data);
+	temp = new Node(val);
 	if ( d == 1)
 		prev->right = temp;
 	if ( d == 2)
@@ -65,30 +62,35 @@ Node* insert(Node* root, int data)
 
 	if ( l - r > 1 || l - r < -1)	//prev=large / temp = mid / prev2 = small
 	{
-
-		if( prev2->data > prev->data)
+		if( prev2->data >= prev->data)
 			swap(prev2, prev);
-		if( temp->data > prev->data)
+		if( temp->data >= prev->data)
 			swap(temp, prev);
-		if( prev2->data > temp->data)
+		if( prev2->data >= temp->data)
 			swap(prev2, temp);
-		if (prev2->parent->right == prev2)	//test for right child
-			test = true;
-		else
-			test = false;
-		rotate(prev, temp, prev2, test);
+		rotate(prev, temp, prev2);
 	}
 	}
 	root = temp;
-	return root;
+
+}
+void BstSort::sort()
+{
+	recurse(this->root);
 }
 
-
-
-void rotate(Node* &large, Node* &mid, Node* &small, bool r)
+void BstSort::recurse (Node *temp)
+{
+	if(temp == nullptr)
+		return;
+	recurse(temp->left);
+	values.push_back(temp->data);
+	recurse(temp->right);
+}
+void rotate(Node* &large, Node* &mid, Node* &small)
 {
 	int height;
-	
+
 	if (mid->parent == small && small->parent == large) //left right
 	{
 		mid->parent = large;
@@ -100,16 +102,16 @@ void rotate(Node* &large, Node* &mid, Node* &small, bool r)
 		large->left = mid;
 		height = small->ht;
 		small->ht = mid->ht;
-		mid->ht = small->ht;
+		mid->ht = height;
 	}
 
 	if (small->parent == mid && mid->parent == large)//left left
 	{
 		if(large->parent)
 		{
-			if(r == true)
+			if(large->parent->right == large)
 				large->parent->right = mid;
-			if(r == false)
+			if(large->parent->left == large)
 				large->parent->left = mid;
 		}
 		mid->parent = large->parent;
@@ -141,9 +143,9 @@ void rotate(Node* &large, Node* &mid, Node* &small, bool r)
 	{
 		if(small->parent)
 		{
-			if (r == true)
+			if (small->parent->right == small)
 				small->parent->right = mid;
-			if (r == false)
+			if (small->parent->left == small)
 				small->parent->left = mid;
 		}
 		mid->parent = small->parent;

@@ -1,0 +1,34 @@
+Yes Program build without warnings or error
+No  BST Sort correctly sorts values
+No  BST Sort elapsed time grows roughly loglinear with the size of N
+No  Program runs without leaking memory
+===============================================================================
+
+Comments:
+   - If we're using the avl tree as a form of sort, when is the sorting actually
+     being done?  Is it during the inserts or during the traversal?  Your
+     implementation is doing inserts in the addVal function which is during
+     the initialization.  Then you are calling the inorder traversal in the 
+     BstSort::sort function.  Does that make sense?
+
+   - If we should be able to use an avl tree to sort a list of numbers, what
+     should the time complexity look like as we increase the number of items
+     being sorted?  Does your implementation reflect the expected growth
+     rate?  If not, why not?
+
+   - After you build the tree and then traverse it to extract the sorted list,
+     that tree needs to be freed or you will leak that memory.  You need to
+     add a couple of destructors to make that happen:
+
+In BstSort
+~BstSort() { delete root ; }
+
+In Node
+~Node() { delete left ; delete right ; }
+
+     Finally, you need to call the BstSort destructor right before exiting the
+     main function:
+
+delete bst;
+
+7/10

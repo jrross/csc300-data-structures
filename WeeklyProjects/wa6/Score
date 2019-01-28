@@ -1,0 +1,44 @@
+- Program compiles without errors or warnings
+	- For some reason the AVLTree.cpp file was missing ??
+- Program passes tests:
+
+------------------------------------------------------------------------------
+If all the lines (below) say PASS then your implementation passes all the tests
+If any lines say 'FAIL' then it should be followed by a sequence of numbers
+that you can use to reproduce some sort of failure in the AVL insertion.
+
+PASS
+PASS
+PASS
+PASS
+PASS
+PASS
+PASS
+FAIL: 800 700 600 500 350 500 
+Starting insert of 1024 values 
+FAIL
+46562 16563 47963 41189 63924 35291 22237 96751 13088 82145 6285 72607 21646 66595 69195 31132 54004 39620 76792 57495 28915 195 77172 73701 45346 37008 93925 31838 67420 11269 
+
+performance (expectation is for time to grow loglinearly with size):
+
+<No results>
+
+Reference implementation :
+1024 0.000318004
+2048 0.000764137
+4096 0.00179263
+8192 0.00410319
+16384 0.0256743
+32768 0.0521721
+65536 0.112663
+131072 0.230746
+262144 0.48779
+524288 1.1154
+1048576 2.5686
+
+It looks like your code is doing strange things when duplicate items are added
+to the tree.  I believe this is the cause of the two failures in the tests
+and the failure in the performance test running.  Since we'll be using this
+same code in WA7, you'll want to figure out the problem.
+
+11/12

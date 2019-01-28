@@ -20,7 +20,6 @@ void AVLTree::addToNodeVal(char key)
 
    nodeVal += key;
 }
-
 /***************************************************************************//**
  * @brief the display event callback function
  *
@@ -46,7 +45,7 @@ void drawNode(int x, int y, Node* root, int depth)
    if (root == nullptr) return;
 
    stringstream ss;
-   ss << root->data;
+   ss << root->data << "(" << root->ht << ")";
    DrawTextString(ss.str().c_str(), x, y);
    if (root->left != nullptr)
    {

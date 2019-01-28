@@ -1,0 +1,40 @@
+Yes Program builds without warnings or error
+Yes Insert Sort gets correct results
+Yes Selection Sort gets correct results
+Yes Shell Sort gets correct results
+Yes BST Sort gets correct results
+Yes AVL Sort gets correct results
+Yes Insert Sort shows correct growth
+Yes Selection Sort shows correct growth
+- Shell Sort shows correct growth
+Yes BST Sort shows correct growth
+Yes AVL Sort shows correct growth
+Yes No memory leaks
+===============================================================================
+
+Jeff, the gap sequence you're using looks correct but the growth of your
+shell sort is quite out of line.  Looking at your implementation:
+
+	while(gap >= 1)
+	{	
+		for(unsigned i = 1; i < values.size(); i = i + gap)
+		{
+			int j = i;
+       		while ( j > 0 && values[j - 1] > values[j] )
+       		{
+           		std::swap(values[j], values[j-1]);
+           		j--;
+			}
+		}
+		gap = gap/3;	
+	}
+}
+
+It's clear what's happening.  The outer for loop has a 'gap' sized step but
+the inner loop has a increment of 1.  This means that the inner loop is
+always doing pair-wise (i.e. adjacent) comparisions which means it is not
+taking advantage of the long-distance inversions we talked about in class.
+If you watch the algorithm run, you'll see that the final gap of 1 runs very
+slowly (meaning the 1-gap insertion sort is doing all the work).
+
+11/12

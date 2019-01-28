@@ -1,0 +1,52 @@
+================================================================
+Running simpleFind:
+simpleFind: PASS
+Running simpleFind2:
+Expected: Dummy Val2
+Got     : Dummy Val
+simpleFind2: FAIL
+Running simpleInsert:
+simpleInsert: PASS
+Running simpleInsert2:
+simpleInsert2: PASS
+Running simpleLF:
+simpleLF: PASS
+Running simpleLF2:
+Expected LF = 0.0
+Got      LF = 0.2
+simpleLF2: FAIL
+Running simpleRehash:
+simpleRehash: PASS
+Running simpleRemove:
+Running negativeFind:
+negativeFind: PASS
+Running negativeRemove:
+negativeRemove: PASS
+================================================================
+Running performance:
+tom.txt Insert time: 0.301804
+tom.txt Find time: 0.270012
+tom.txt Remove time: 0.267381
+Load Factor (should be 0.0%): 32.6689%
+================================================================
+
+SimpleFind2: Checks to see if I can insert a key/value pair then insert
+             another key/value pair where the keys are the same.  I.E.
+             testing what the replacement policy is for the insert function.
+             (seg fault)
+
+SimpleLF2: Checks to see if you're managing the load factor calculation after
+           removing an item.
+
+SimpleRemove: Requires that the end() member function was implemented as
+              per the problem writeup.
+
+Performance: Tries to insert all the words in the Tom Sawyer text into the
+             hash, search for them, remove them and measure timing stats.
+             (hangs)
+
+It looks like you have most of the concepts down.  Your testing can use an
+upgrade as your code doesn't appear to have been tested against some expected
+use cases.
+
+13.5/15
