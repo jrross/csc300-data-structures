@@ -1,0 +1,23 @@
+-- Checkpoint #1
+-------------------------------------------------------------------------------
+Yes Code compiles
+Yes Code runs and brings up window
+Yes Some or all of the palette is visible
+Yes Partial palette behaves when window is resized
+Ok All team members show repository activity
+-------------------------------------------------------------------------------
+Functionally looks good so far.  I haven't dug into the code as it's early and
+you'll probably redesign/refactor a couple times before you submit.
+
+    10  Luke Videckis <luke.videckis@mines.sdsmt.edu>
+     6  Benjamin LeBrun <bl.lebrun@gmail.com>
+     2  Jeffrey Ross <jeffrey.ross@mines.sdsmt.edu>
+
+For something of this complexity there should be *frequent* commits.  Remember
+that a commit isn't a push.  Every time you get something compiling or 
+marginally working you should commit.  Don't lose a bunch of work because you
+didn't do frequent commits.
+
+If what this is really showing me is that one person is doing all the work then
+that is going to be a problem.  If some of you are just not committing 
+frequently then step up your game.

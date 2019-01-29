@@ -1,0 +1,106 @@
+\hypertarget{classShape}{\section{Shape Class Reference}
+\label{classShape}\index{Shape@{Shape}}
+}
+
+
+This is the \hyperlink{classShape}{Shape} class.  
+
+
+
+
+{\ttfamily \#include $<$shape.\-h$>$}
+
+Inheritance diagram for Shape\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classShape}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classShape_ac3b9fc48965274893f25b18aa14ba665}{$\sim$\-Shape} ()
+\item 
+virtual void \hyperlink{classShape_a0d778013ae2532b958c8403155b36b7a}{draw} () const =0
+\item 
+virtual bool \hyperlink{classShape_abd90f6afcbacf45d1bcccc8225243101}{contains} (int a, int b) const =0
+\item 
+virtual void \hyperlink{classShape_a140551e1a4fc2c4d8cf8d2e01c5a5932}{move} (int x, int y)=0
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classShape_a9f925188936af909e796807fc75c1501}{color} \mbox{[}3\mbox{]}
+\item 
+float \hyperlink{classShape_ac4439415a7e663a7088fe36244cefaca}{border} \mbox{[}3\mbox{]}
+\item 
+std\-::vector$<$ int $>$ \hyperlink{classShape_affa8864633ce066ea626eb50fb4d7584}{display\-Shapes}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classShape}{Shape} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classShape_ac3b9fc48965274893f25b18aa14ba665}{\index{Shape@{Shape}!$\sim$\-Shape@{$\sim$\-Shape}}
+\index{$\sim$\-Shape@{$\sim$\-Shape}!Shape@{Shape}}
+\subsubsection[{$\sim$\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}virtual Shape\-::$\sim$\-Shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classShape_ac3b9fc48965274893f25b18aa14ba665}
+\hyperlink{classShape}{Shape} destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classShape_abd90f6afcbacf45d1bcccc8225243101}{\index{Shape@{Shape}!contains@{contains}}
+\index{contains@{contains}!Shape@{Shape}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Shape\-::contains (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classShape_abd90f6afcbacf45d1bcccc8225243101}
+shape contains function 
+
+Implemented in \hyperlink{classRectangle_a763094105c015cce727a486baff1dfaf}{Rectangle}, \hyperlink{classEllipse_a31b6310abda060741eb7033636709ce6}{Ellipse}, \hyperlink{classFilledEllipse_a1b18f3c89f3d44a0d091b4a5a5890816}{Filled\-Ellipse}, \hyperlink{classFilledRectangle_a7db0492e684aee027407af324db12f5e}{Filled\-Rectangle}, and \hyperlink{classLine_a0c1073cc62a7dc78b7f49bc776f40b40}{Line}.
+
+\hypertarget{classShape_a0d778013ae2532b958c8403155b36b7a}{\index{Shape@{Shape}!draw@{draw}}
+\index{draw@{draw}!Shape@{Shape}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Shape\-::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classShape_a0d778013ae2532b958c8403155b36b7a}
+shape draw function 
+
+Implemented in \hyperlink{classRectangle_af3b5f195986cdf6c5b5df95fa9ab22b8}{Rectangle}, \hyperlink{classEllipse_a99c72122041b0523dc9227fc3e985179}{Ellipse}, \hyperlink{classFilledEllipse_a6010d7760f8418439ecdbcc1dcfe9b4c}{Filled\-Ellipse}, \hyperlink{classFilledRectangle_a49851c7d17a59e69c78e8957e25b5aec}{Filled\-Rectangle}, and \hyperlink{classLine_ac54adb686a64dd9bd1701207a6cf2a83}{Line}.
+
+\hypertarget{classShape_a140551e1a4fc2c4d8cf8d2e01c5a5932}{\index{Shape@{Shape}!move@{move}}
+\index{move@{move}!Shape@{Shape}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Shape\-::move (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classShape_a140551e1a4fc2c4d8cf8d2e01c5a5932}
+shape move function 
+
+Implemented in \hyperlink{classRectangle_a3cfcca33879bd4cd31ed738578eca79e}{Rectangle}, \hyperlink{classEllipse_a7b536dcba1a231980299d2f309ab6fe0}{Ellipse}, \hyperlink{classFilledEllipse_a3fd1d3d0b506716399ec543a32a3c450}{Filled\-Ellipse}, \hyperlink{classFilledRectangle_acbf15e9451754a1ab873c97decf6718b}{Filled\-Rectangle}, and \hyperlink{classLine_a1dac74ba3a1c1770079dae9901e05af2}{Line}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classShape_ac4439415a7e663a7088fe36244cefaca}{\index{Shape@{Shape}!border@{border}}
+\index{border@{border}!Shape@{Shape}}
+\subsubsection[{border}]{\setlength{\rightskip}{0pt plus 5cm}float Shape\-::border\mbox{[}3\mbox{]}}}\label{classShape_ac4439415a7e663a7088fe36244cefaca}
+border color \hypertarget{classShape_a9f925188936af909e796807fc75c1501}{\index{Shape@{Shape}!color@{color}}
+\index{color@{color}!Shape@{Shape}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}float Shape\-::color\mbox{[}3\mbox{]}}}\label{classShape_a9f925188936af909e796807fc75c1501}
+fill color \hypertarget{classShape_affa8864633ce066ea626eb50fb4d7584}{\index{Shape@{Shape}!display\-Shapes@{display\-Shapes}}
+\index{display\-Shapes@{display\-Shapes}!Shape@{Shape}}
+\subsubsection[{display\-Shapes}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$int$>$ Shape\-::display\-Shapes}}\label{classShape_affa8864633ce066ea626eb50fb4d7584}
+list of ints which tell what shape it is 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{shape_8h}{shape.\-h}\end{DoxyCompactItemize}

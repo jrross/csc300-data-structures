@@ -1,0 +1,179 @@
+\hypertarget{classLine}{\section{Line Class Reference}
+\label{classLine}\index{Line@{Line}}
+}
+
+
+This is the \hyperlink{classLine}{Line} class. It inherits from the \hyperlink{classShape}{Shape} class.  
+
+
+
+
+{\ttfamily \#include $<$line.\-h$>$}
+
+Inheritance diagram for Line\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLine_afc1bfd0f0c5c94e78f7a157fdecae905}{Line} (int x1, int y1, int x2, int y2, float \hyperlink{classShape_a9f925188936af909e796807fc75c1501}{color}\mbox{[}3\mbox{]})
+\item 
+\hyperlink{classLine_aabe85f48d22d92b62257091f48174fac}{$\sim$\-Line} ()
+\item 
+void \hyperlink{classLine_ac54adb686a64dd9bd1701207a6cf2a83}{draw} () const 
+\item 
+bool \hyperlink{classLine_a0c1073cc62a7dc78b7f49bc776f40b40}{contains} (int a, int b) const 
+\item 
+void \hyperlink{classLine_a1dac74ba3a1c1770079dae9901e05af2}{move} (int x, int y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classLine}{Line} class. It inherits from the \hyperlink{classShape}{Shape} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLine_afc1bfd0f0c5c94e78f7a157fdecae905}{\index{Line@{Line}!Line@{Line}}
+\index{Line@{Line}!Line@{Line}}
+\subsubsection[{Line}]{\setlength{\rightskip}{0pt plus 5cm}Line\-::\-Line (
+\begin{DoxyParamCaption}
+\item[{int}]{x1, }
+\item[{int}]{y1, }
+\item[{int}]{x2, }
+\item[{int}]{y2, }
+\item[{float}]{color\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classLine_afc1bfd0f0c5c94e78f7a157fdecae905}
+line constructor
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This is the constructor for the \hyperlink{classLine}{Line} class. It just updates the values for the class. (wow, that's awesome!)
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x1} & -\/ the x value of the down click \\
+\hline
+\mbox{\tt in}  & {\em y1} & -\/ the y value of the down click \\
+\hline
+\mbox{\tt in}  & {\em x2} & -\/ the x value of the up click \\
+\hline
+\mbox{\tt in}  & {\em y2} & -\/ the y value of the up click \\
+\hline
+\mbox{\tt in}  & {\em color} & -\/ the float of R\-G\-B values for the line\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\hypertarget{classLine_aabe85f48d22d92b62257091f48174fac}{\index{Line@{Line}!$\sim$\-Line@{$\sim$\-Line}}
+\index{$\sim$\-Line@{$\sim$\-Line}!Line@{Line}}
+\subsubsection[{$\sim$\-Line}]{\setlength{\rightskip}{0pt plus 5cm}Line\-::$\sim$\-Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLine_aabe85f48d22d92b62257091f48174fac}
+line destructor
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This is the destructor for the \hyperlink{classLine}{Line} class. It does absolutely nothing. Nice.
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLine_a0c1073cc62a7dc78b7f49bc776f40b40}{\index{Line@{Line}!contains@{contains}}
+\index{contains@{contains}!Line@{Line}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Line\-::contains (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLine_a0c1073cc62a7dc78b7f49bc776f40b40}
+line contains function
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This functions returns true if the click is near the line and false otherwise. Near the line means the click is anywhere between 30 pixels above or below the line.
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & -\/ the x value of the click to be checked \\
+\hline
+\mbox{\tt in}  & {\em c} & -\/ the y value of the click to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the click is near the line 
+
+false if the click is not near the line 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classShape_abd90f6afcbacf45d1bcccc8225243101}{Shape}.
+
+\hypertarget{classLine_ac54adb686a64dd9bd1701207a6cf2a83}{\index{Line@{Line}!draw@{draw}}
+\index{draw@{draw}!Line@{Line}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Line\-::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLine_ac54adb686a64dd9bd1701207a6cf2a83}
+line draw function
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This function draws a line (oooo spicy)
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classShape_a0d778013ae2532b958c8403155b36b7a}{Shape}.
+
+\hypertarget{classLine_a1dac74ba3a1c1770079dae9901e05af2}{\index{Line@{Line}!move@{move}}
+\index{move@{move}!Line@{Line}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Line\-::move (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classLine_a1dac74ba3a1c1770079dae9901e05af2}
+line move function
+
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+this function displaces the object on the xy axis' with the provided x and y value
+\end{DoxyParagraph}
+param\mbox{[}in\mbox{]} x -\/ amount to displace on x axis param\mbox{[}in\mbox{]} y -\/ amount to displace on y axis
+
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classShape_a140551e1a4fc2c4d8cf8d2e01c5a5932}{Shape}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{line_8h}{line.\-h}\item 
+\hyperlink{line_8cpp}{line.\-cpp}\end{DoxyCompactItemize}

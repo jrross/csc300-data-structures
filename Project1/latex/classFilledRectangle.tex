@@ -1,0 +1,149 @@
+\hypertarget{classFilledRectangle}{\section{Filled\-Rectangle Class Reference}
+\label{classFilledRectangle}\index{Filled\-Rectangle@{Filled\-Rectangle}}
+}
+
+
+This is the \hyperlink{classFilledRectangle}{Filled\-Rectangle} Class. It inherits from the \hyperlink{classRectangle}{Rectangle} class.  
+
+
+
+
+{\ttfamily \#include $<$Filled\-Rectangle.\-h$>$}
+
+Inheritance diagram for Filled\-Rectangle\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classFilledRectangle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFilledRectangle_af486107ac4b31342ab021e9953daa244}{Filled\-Rectangle} (int i1, int j1, int i2, int j2, float c\mbox{[}3\mbox{]}, float b\mbox{[}3\mbox{]})
+\item 
+\hyperlink{classFilledRectangle_a56e0054800fc14cf782591c19545e07b}{$\sim$\-Filled\-Rectangle} ()
+\item 
+void \hyperlink{classFilledRectangle_a49851c7d17a59e69c78e8957e25b5aec}{draw} () const 
+\item 
+bool \hyperlink{classFilledRectangle_a7db0492e684aee027407af324db12f5e}{contains} (int a, int b) const 
+\item 
+void \hyperlink{classFilledRectangle_acbf15e9451754a1ab873c97decf6718b}{move} (int x, int y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classFilledRectangle}{Filled\-Rectangle} Class. It inherits from the \hyperlink{classRectangle}{Rectangle} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFilledRectangle_af486107ac4b31342ab021e9953daa244}{\index{Filled\-Rectangle@{Filled\-Rectangle}!Filled\-Rectangle@{Filled\-Rectangle}}
+\index{Filled\-Rectangle@{Filled\-Rectangle}!FilledRectangle@{Filled\-Rectangle}}
+\subsubsection[{Filled\-Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}Filled\-Rectangle\-::\-Filled\-Rectangle (
+\begin{DoxyParamCaption}
+\item[{int}]{i1, }
+\item[{int}]{j1, }
+\item[{int}]{i2, }
+\item[{int}]{j2, }
+\item[{float}]{c\mbox{[}3\mbox{]}, }
+\item[{float}]{b\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classFilledRectangle_af486107ac4b31342ab021e9953daa244}
+filled rectangle constructor \hypertarget{classFilledRectangle_a56e0054800fc14cf782591c19545e07b}{\index{Filled\-Rectangle@{Filled\-Rectangle}!$\sim$\-Filled\-Rectangle@{$\sim$\-Filled\-Rectangle}}
+\index{$\sim$\-Filled\-Rectangle@{$\sim$\-Filled\-Rectangle}!FilledRectangle@{Filled\-Rectangle}}
+\subsubsection[{$\sim$\-Filled\-Rectangle}]{\setlength{\rightskip}{0pt plus 5cm}Filled\-Rectangle\-::$\sim$\-Filled\-Rectangle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFilledRectangle_a56e0054800fc14cf782591c19545e07b}
+filled rectangle destructor
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This is the destructor for the \hyperlink{classFilledRectangle}{Filled\-Rectangle} class.
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFilledRectangle_a7db0492e684aee027407af324db12f5e}{\index{Filled\-Rectangle@{Filled\-Rectangle}!contains@{contains}}
+\index{contains@{contains}!FilledRectangle@{Filled\-Rectangle}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Filled\-Rectangle\-::contains (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFilledRectangle_a7db0492e684aee027407af324db12f5e}
+filled rectangle contains function
+
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+a function that checks to see if the rectangle contains a certain (x,y) coordinate.
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+true -\/ if it contains the coordinates 
+
+false -\/ if it does not contain the coordinates 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classShape_abd90f6afcbacf45d1bcccc8225243101}{Shape}.
+
+\hypertarget{classFilledRectangle_a49851c7d17a59e69c78e8957e25b5aec}{\index{Filled\-Rectangle@{Filled\-Rectangle}!draw@{draw}}
+\index{draw@{draw}!FilledRectangle@{Filled\-Rectangle}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Filled\-Rectangle\-::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFilledRectangle_a49851c7d17a59e69c78e8957e25b5aec}
+filled rectangle draw function
+
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+a function that prints the filled rectangle to the screen
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classShape_a0d778013ae2532b958c8403155b36b7a}{Shape}.
+
+\hypertarget{classFilledRectangle_acbf15e9451754a1ab873c97decf6718b}{\index{Filled\-Rectangle@{Filled\-Rectangle}!move@{move}}
+\index{move@{move}!FilledRectangle@{Filled\-Rectangle}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Filled\-Rectangle\-::move (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFilledRectangle_acbf15e9451754a1ab873c97decf6718b}
+filled rectangle move function
+
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+this function displaces the object on the xy axis' with the provided x and y value
+\end{DoxyParagraph}
+param\mbox{[}in\mbox{]} x -\/ amount to displace on x axis param\mbox{[}in\mbox{]} y -\/ amount to displace on y axis
+
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classShape_a140551e1a4fc2c4d8cf8d2e01c5a5932}{Shape}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{FilledRectangle_8h}{Filled\-Rectangle.\-h}\item 
+\hyperlink{FilledRectangle_8cpp}{Filled\-Rectangle.\-cpp}\end{DoxyCompactItemize}

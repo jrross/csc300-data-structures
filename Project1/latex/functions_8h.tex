@@ -1,0 +1,225 @@
+\hypertarget{functions_8h}{\section{functions.\-h File Reference}
+\label{functions_8h}\index{functions.\-h@{functions.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$G\-L/freeglut.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}shape.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}rectangle.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ellipse.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{functions_8h_acc1ffe65e6869931318610cae7210078}{reshape} (int w, int h)
+\item 
+void \hyperlink{functions_8h_a1e5b20fed15743656bb6d2e6a6ea6269}{display} ()
+\item 
+void \hyperlink{functions_8h_aef7ba2f69afb2d954545f64c7fe24b14}{keyboard} (unsigned char key, int x, int y)
+\item 
+void \hyperlink{functions_8h_a125707cf235695f4eb006113f0c01265}{mouse\-Click} (int button, int state, int x, int y)
+\item 
+void \hyperlink{functions_8h_ac67d6f71ce80edfed6148387d2dfc487}{print\-Palette} (int action, \hyperlink{structcurrentProperties}{current\-Properties} $\ast$curr)
+\item 
+vector$<$ \hyperlink{classShape}{Shape} $\ast$ $>$ \hyperlink{functions_8h_aaba9e1b6d4a6c937669cc453b8c00290}{make\-Palette} ()
+\item 
+void \hyperlink{functions_8h_a2ed838fa7a4a7be7950f11964b23a44e}{check\-Palette} (int x, int y, float(\&rtcolor)\mbox{[}3\mbox{]})
+\item 
+bool \hyperlink{functions_8h_a6d3c2ada6e6c655626798e5ea71ee622}{edit\-Shapes} (int action, \hyperlink{classShape}{Shape} $\ast$temp, int x=0, int y=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{functions_8h_a2ed838fa7a4a7be7950f11964b23a44e}{\index{functions.\-h@{functions.\-h}!check\-Palette@{check\-Palette}}
+\index{check\-Palette@{check\-Palette}!functions.h@{functions.\-h}}
+\subsubsection[{check\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}void check\-Palette (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{float(\&)}]{rtcolor\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_a2ed838fa7a4a7be7950f11964b23a44e}
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+this function goes through a vector containing all rectangles of the palette, checking to see if they contain the passed x and y values. if the rectangle in the palette contains the coordinates, it will change the array of current colors or will change the next shape to be drawn. (shape portion not yet added)
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em x} & -\/ coordinate to be checked \\
+\hline
+\mbox{\tt in}  & {\em y} & -\/ coordinate to be checked \\
+\hline
+\mbox{\tt in}  & {\em rtcolor} & -\/ an array containing R\-G\-B values for current color.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ nothing 
+\end{DoxyReturn}
+\hypertarget{functions_8h_a1e5b20fed15743656bb6d2e6a6ea6269}{\index{functions.\-h@{functions.\-h}!display@{display}}
+\index{display@{display}!functions.h@{functions.\-h}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_a1e5b20fed15743656bb6d2e6a6ea6269}
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This function will print the palette along with all the shapes drawn
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\hypertarget{functions_8h_a6d3c2ada6e6c655626798e5ea71ee622}{\index{functions.\-h@{functions.\-h}!edit\-Shapes@{edit\-Shapes}}
+\index{edit\-Shapes@{edit\-Shapes}!functions.h@{functions.\-h}}
+\subsubsection[{edit\-Shapes}]{\setlength{\rightskip}{0pt plus 5cm}bool edit\-Shapes (
+\begin{DoxyParamCaption}
+\item[{int}]{action, }
+\item[{{\bf Shape} $\ast$}]{temp, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_a6d3c2ada6e6c655626798e5ea71ee622}
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This function maintains all the shapes that are being displayed to the screen. It stores all the shapes in a vector and acts upon them accordingly based on the action that is passed in. It can add new shapes, print all the shapes, delete one or all shapes, and check if any shapes contain an (x,y) coordinate.
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em temp} & -\/ pointer to a shape to be added \\
+\hline
+\mbox{\tt in}  & {\em action} & -\/ represents what action to take \\
+\hline
+\mbox{\tt in}  & {\em x} & -\/ x coordinate to be operated on \\
+\hline
+\mbox{\tt in}  & {\em y} & -\/ y coordinate to be operated on\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it contains an (x,y) coordinate 
+\end{DoxyReturn}
+\hypertarget{functions_8h_aef7ba2f69afb2d954545f64c7fe24b14}{\index{functions.\-h@{functions.\-h}!keyboard@{keyboard}}
+\index{keyboard@{keyboard}!functions.h@{functions.\-h}}
+\subsubsection[{keyboard}]{\setlength{\rightskip}{0pt plus 5cm}void keyboard (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{key, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_aef7ba2f69afb2d954545f64c7fe24b14}
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This function will print the palette along with all the shapes drawn
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em key} & -\/ an unsigned char which is the key that was pressed \\
+\hline
+\mbox{\tt in}  & {\em x} & -\/ a float containing the x coordinate \\
+\hline
+\mbox{\tt in}  & {\em y} & -\/ a float containing the y coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\hypertarget{functions_8h_aaba9e1b6d4a6c937669cc453b8c00290}{\index{functions.\-h@{functions.\-h}!make\-Palette@{make\-Palette}}
+\index{make\-Palette@{make\-Palette}!functions.h@{functions.\-h}}
+\subsubsection[{make\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Shape}$\ast$$>$ make\-Palette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_aaba9e1b6d4a6c937669cc453b8c00290}
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+this function creates a vector containing rectangles to act as the palette. Each rectangle has a different color or shape to represent it's action.
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+vect -\/ a vector of rectangles 
+\end{DoxyReturn}
+\hypertarget{functions_8h_a125707cf235695f4eb006113f0c01265}{\index{functions.\-h@{functions.\-h}!mouse\-Click@{mouse\-Click}}
+\index{mouse\-Click@{mouse\-Click}!functions.h@{functions.\-h}}
+\subsubsection[{mouse\-Click}]{\setlength{\rightskip}{0pt plus 5cm}void mouse\-Click (
+\begin{DoxyParamCaption}
+\item[{int}]{button, }
+\item[{int}]{state, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_a125707cf235695f4eb006113f0c01265}
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This is the function that is called when the window detects an action. if the down click is within the area of the palette, it calls another function to check what action to take regarding the palette. The function then ignores the next release of the mouse. If it is not within the palette, it stores the coordinates of the down click in static variables, and then makes the corresponding shape using the coordinates from the release.
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em button} & -\/ an integer containing which action was performed \\
+\hline
+\mbox{\tt in}  & {\em state} & -\/ an int containing if the action was pushed or released \\
+\hline
+\mbox{\tt in}  & {\em x} & -\/ an int containing the x coordinate \\
+\hline
+\mbox{\tt in}  & {\em y} & -\/ an int containing the y coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\hypertarget{functions_8h_ac67d6f71ce80edfed6148387d2dfc487}{\index{functions.\-h@{functions.\-h}!print\-Palette@{print\-Palette}}
+\index{print\-Palette@{print\-Palette}!functions.h@{functions.\-h}}
+\subsubsection[{print\-Palette}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Palette (
+\begin{DoxyParamCaption}
+\item[{int}]{action, }
+\item[{{\bf current\-Properties} $\ast$}]{curr}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_ac67d6f71ce80edfed6148387d2dfc487}
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+a function that prints out the vector containing the palette and the varying shapes above that. It can also be called to update the top left portion of the palette.
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em action} & -\/ an integer to tell what actuion to take \\
+\hline
+\mbox{\tt in}  & {\em curr} & -\/ a static struct to tell the current properties of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\hypertarget{functions_8h_acc1ffe65e6869931318610cae7210078}{\index{functions.\-h@{functions.\-h}!reshape@{reshape}}
+\index{reshape@{reshape}!functions.h@{functions.\-h}}
+\subsubsection[{reshape}]{\setlength{\rightskip}{0pt plus 5cm}void reshape (
+\begin{DoxyParamCaption}
+\item[{int}]{w, }
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}}\label{functions_8h_acc1ffe65e6869931318610cae7210078}
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This function will print the shape in a new location
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em w} & -\/ an int which is the new width of the shape \\
+\hline
+\mbox{\tt in}  & {\em h} & -\/ an int which is the new height of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}

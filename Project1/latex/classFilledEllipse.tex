@@ -1,0 +1,182 @@
+\hypertarget{classFilledEllipse}{\section{Filled\-Ellipse Class Reference}
+\label{classFilledEllipse}\index{Filled\-Ellipse@{Filled\-Ellipse}}
+}
+
+
+This is the \hyperlink{classFilledEllipse}{Filled\-Ellipse} Class. It inherits from the \hyperlink{classEllipse}{Ellipse} class.  
+
+
+
+
+{\ttfamily \#include $<$Filled\-Ellipse.\-h$>$}
+
+Inheritance diagram for Filled\-Ellipse\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classFilledEllipse}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classFilledEllipse_aa3dfc1a2b1428966984ee92ee0e4a18b}{Filled\-Ellipse} (int in\-X1, int in\-Y1, int in\-X2, int in\-Y2, float c\mbox{[}3\mbox{]}, float b\mbox{[}3\mbox{]})
+\item 
+\hyperlink{classFilledEllipse_a46d02d99024ca857cb5e08187b2d265f}{$\sim$\-Filled\-Ellipse} ()
+\item 
+void \hyperlink{classFilledEllipse_a6010d7760f8418439ecdbcc1dcfe9b4c}{draw} () const 
+\item 
+bool \hyperlink{classFilledEllipse_a1b18f3c89f3d44a0d091b4a5a5890816}{contains} (int a, int b) const 
+\item 
+void \hyperlink{classFilledEllipse_a3fd1d3d0b506716399ec543a32a3c450}{move} (int x, int y)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the \hyperlink{classFilledEllipse}{Filled\-Ellipse} Class. It inherits from the \hyperlink{classEllipse}{Ellipse} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFilledEllipse_aa3dfc1a2b1428966984ee92ee0e4a18b}{\index{Filled\-Ellipse@{Filled\-Ellipse}!Filled\-Ellipse@{Filled\-Ellipse}}
+\index{Filled\-Ellipse@{Filled\-Ellipse}!FilledEllipse@{Filled\-Ellipse}}
+\subsubsection[{Filled\-Ellipse}]{\setlength{\rightskip}{0pt plus 5cm}Filled\-Ellipse\-::\-Filled\-Ellipse (
+\begin{DoxyParamCaption}
+\item[{int}]{in\-X1, }
+\item[{int}]{in\-Y1, }
+\item[{int}]{in\-X2, }
+\item[{int}]{in\-Y2, }
+\item[{float}]{c\mbox{[}3\mbox{]}, }
+\item[{float}]{b\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classFilledEllipse_aa3dfc1a2b1428966984ee92ee0e4a18b}
+\hyperlink{classFilledEllipse}{Filled\-Ellipse} constructor
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This is the constructor for the \hyperlink{classFilledEllipse}{Filled\-Ellipse} class. It just updates the values for the class.
+\end{DoxyParagraph}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em in\-X1} & -\/ the x value of the down click \\
+\hline
+\mbox{\tt in}  & {\em in\-Y1} & -\/ the y value of the down click \\
+\hline
+\mbox{\tt in}  & {\em in\-X2} & -\/ the x value of the up click \\
+\hline
+\mbox{\tt in}  & {\em in\-Y2} & -\/ the y value of the up click \\
+\hline
+\mbox{\tt in}  & {\em c} & -\/ the float of R\-G\-B values for the color of the \hyperlink{classEllipse}{Ellipse} \\
+\hline
+\mbox{\tt in}  & {\em b} & -\/ the float of R\-G\-B values for the border of the \hyperlink{classEllipse}{Ellipse}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+\hypertarget{classFilledEllipse_a46d02d99024ca857cb5e08187b2d265f}{\index{Filled\-Ellipse@{Filled\-Ellipse}!$\sim$\-Filled\-Ellipse@{$\sim$\-Filled\-Ellipse}}
+\index{$\sim$\-Filled\-Ellipse@{$\sim$\-Filled\-Ellipse}!FilledEllipse@{Filled\-Ellipse}}
+\subsubsection[{$\sim$\-Filled\-Ellipse}]{\setlength{\rightskip}{0pt plus 5cm}Filled\-Ellipse\-::$\sim$\-Filled\-Ellipse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classFilledEllipse_a46d02d99024ca857cb5e08187b2d265f}
+filled ellipse destructor
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This is the destructor for the \hyperlink{classFilledEllipse}{Filled\-Ellipse} class. It doesn't do much.
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFilledEllipse_a1b18f3c89f3d44a0d091b4a5a5890816}{\index{Filled\-Ellipse@{Filled\-Ellipse}!contains@{contains}}
+\index{contains@{contains}!FilledEllipse@{Filled\-Ellipse}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool Filled\-Ellipse\-::contains (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFilledEllipse_a1b18f3c89f3d44a0d091b4a5a5890816}
+filled ellipse contains function
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This functions returns true if the click is inside the ellipse and false otherwise. It is exactly the same as the contains function for the ellipse class.
+\end{DoxyParagraph}
+
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ the x value of the click to be checked \\
+\hline
+{\em b} & -\/ the y value of the click to be checked\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the click inside the ellipse 
+
+false if the click is outside the ellipse 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classEllipse_a31b6310abda060741eb7033636709ce6}{Ellipse}.
+
+\hypertarget{classFilledEllipse_a6010d7760f8418439ecdbcc1dcfe9b4c}{\index{Filled\-Ellipse@{Filled\-Ellipse}!draw@{draw}}
+\index{draw@{draw}!FilledEllipse@{Filled\-Ellipse}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Filled\-Ellipse\-::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFilledEllipse_a6010d7760f8418439ecdbcc1dcfe9b4c}
+filled ellipse draw function
+
+\begin{DoxyAuthor}{Author}
+Luke Videckis
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+This function draws an ellipse with a fill and border color.
+\end{DoxyParagraph}
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classEllipse_a99c72122041b0523dc9227fc3e985179}{Ellipse}.
+
+\hypertarget{classFilledEllipse_a3fd1d3d0b506716399ec543a32a3c450}{\index{Filled\-Ellipse@{Filled\-Ellipse}!move@{move}}
+\index{move@{move}!FilledEllipse@{Filled\-Ellipse}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}void Filled\-Ellipse\-::move (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classFilledEllipse_a3fd1d3d0b506716399ec543a32a3c450}
+filled ellipse move function
+
+\begin{DoxyAuthor}{Author}
+Jeffrey Ross
+\end{DoxyAuthor}
+\begin{DoxyParagraph}{Description\-:}
+this function displaces the object on the xy axis' with the provided x and y value
+\end{DoxyParagraph}
+param\mbox{[}in\mbox{]} x -\/ amount to displace on x axis param\mbox{[}in\mbox{]} y -\/ amount to displace on y axis
+
+\begin{DoxyReturn}{Returns}
+nothing 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classEllipse_a7b536dcba1a231980299d2f309ab6fe0}{Ellipse}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{FilledEllipse_8h}{Filled\-Ellipse.\-h}\item 
+\hyperlink{FilledEllipse_8cpp}{Filled\-Ellipse.\-cpp}\end{DoxyCompactItemize}

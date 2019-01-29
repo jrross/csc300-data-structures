@@ -1,0 +1,100 @@
+/**************************************************************************//**
+ * @file
+ *
+ * @mainpage Program 1 - SDSM&T Paint
+ *
+ * @section course_section Course Information
+ *
+ * @authors Luke Videckis and Jeffrey Ross
+ *
+ * @date February 24, 2017
+ *
+ * @par Instructor:
+ *         Dr. Hinker
+ *
+ * @par Course:
+ *         CSC 300 - Section 1 - 10:00 am
+ *
+ * @par Location:
+ *         McLaury - Room 205
+ *
+ * @par Description: This project has the purpose of immitating Microsoft paint.
+ * Although, the number of features is much less. This program will open a
+ * window through the Glut software. There is a palette in the bottom left
+ * corner where the user can choose colors and shapes. The top left square in 
+ * the palette shows the current shape to be drawn. The user must choose a shape
+ * and a color before drawing can occur. Once a shape and color is chosen by 
+ * right clicking, shapes can be drawn by left clicking and dragging in the 
+ * canvas. Right-clicking on shapes and dragging them will move that shape, and
+ * redraw it on top of everything else.
+ *
+ * This project is an exercise in OOP, using Glut for designing a GUI, and 
+ * practicing good repository citizenship.
+ *
+ *
+ * @section compile_section Compiling and Usage
+ *
+ * @par Compiling Instructions:
+ *      % make to compile, % ./main to run
+ *
+ * @par Usage:
+   @verbatim
+   c:\> main.exe
+   d:\> C:\Project1
+   @endverbatim
+ *
+ * @section todo_bugs_modification_section Todo, Bugs, and Modifications
+ *
+ * @bug None
+ *
+ * @todo None
+ *
+ * @par Modifications and Development Timeline:
+ @verbatim
+ Date          Modification
+ ------------  --------------------------------------------------------------
+ https://gitlab.mcs.sdsmt.edu/7275982/Project1.git
+ @endverbatim
+ *
+ *****************************************************************************/
+
+#include <vector>
+#ifndef SHAPE_H
+#define SHAPE_H
+
+/*!
+* @brief This is the abstract Shape class. It has three pure virtual functions:
+* draw, contains, and move. 
+*/
+
+class Shape
+{
+public:
+    virtual ~Shape(){}
+    virtual void draw() const = 0;
+    virtual bool contains(int a, int b) const = 0;
+    virtual void move(int x, int y) = 0;
+    float color[3], border[3];
+    std::vector<int> displayShapes;
+};
+
+/*!
+* @brief Stores info for one shape. This is used as a static struct to 
+* tell the draw functions which shape and color should be drawn.
+*/
+
+struct currentProperties
+{
+    float color[3],border[3]; /*!< These float arrays store RGB color values
+                               * for the interior and border of a shape
+                               */
+    int shapeType;  /*!< 1 = rectangle
+                     *   2 = ellipse
+                     *   3 = line
+                     *   4 = filled elipse
+                     *   5 = filled rectangle
+                     */
+    bool ready; /*!< This is true if both color and shape are selected*/
+};
+
+#endif

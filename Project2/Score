@@ -1,0 +1,100 @@
+* Checkpoint #1
+	- Code compiles without warning or error [yes]
+	- Preliminary Quadtree class in place and partially documented [yes]
+	- All team members showing repository activity [sort of]
+	- Documentation on compression strategy is in place and outlined
+===============================================================================
+If you are doing a significant amount of paired programming, make sure that 
+is noted in the comments.  Everyone should work to become comfortable with 
+the source code repository.  Just a couple of commits is a little light 
+although the checkpoint was modest in terms of the work that needed to be done.
+
+Since the checkpoint requirements were put up late I'll cut you some slack
+in terms of not having met them.  I will not do so for the next checkpoint
+requirements.  I am also not seeing much in the way of repository activity from
+any of the team members.  If there is a problem understanding the assignment
+come in and ask questions.
+
+* Checkpoint #2
+	- All of Checkpoint 1 requirements [yes]
+	- Preliminary statistics are displayed (either in the window or console)[no]
+	- Documentation on quadtree class is complete and correct [no]
+===============================================================================
+Good balance in the repo activity.  It doesn't look like you're currently
+using the image quality factor in your calculations.  You'll want to make sure
+you make that change before final submission.  Also, this checkpoint had a
+requirement to display (either in the window or the console) some basic
+statistics about the compression.  I do not see those.
+
+While is looks like there's good balance between the team members in the 
+repository, it appears that there's little collaboration (one works on it a 
+while then stops, the other works on it a while, etc.).  Team projects require
+some coordination.  Perhaps it's an artifact of the way the commits are being
+done.
+
+* Submission
+   * Very nice implementation
+   * Clean code for the most part
+   * Application runs smoothly and efficiently
+   * Nice additional features (color compression, negative image view,
+     dynamic quality control)  (Yes, I saw that late fix, Naomi)
+   * Documentation builds cleanly.  The mainpage is a little light on 
+     description but fairly complete in terms of usage for the application.
+   * The non-provided code is documented sufficiently
+   * Interior comments in the code are sufficient to understand the basic
+     workings of the program and should allow you to come back to it in the
+     future to reuse parts of it.
+===============================================================================
+
+   This is really well done you two.  Code is clean and consistently formatted.
+There are a couple methods that could use a little refactoring (buildArray, and
+recurse) but that is fairly minor.
+
+   I did get your code to crash while running under valgrind.  To reproduce
+the problem compile with debugging and run under valgrind:
+
+% make clean debug
+% valgrind --leak-check=full main lena.bmp 10
+[it will run slowly, be patient]
+type 'c' to switch to color picture
+
+From the messages I see from valgrind it looks like the heap is being 
+corrupted which typically means memory is being over or under indexed.
+No points off for this since the color feature is a bonus feature.
+
+There does appear to be some memory leakage.  Again, run under valgrind
+and do some operations (increase/decrease quality factor, toggle the
+grid on and off) then exit with the 'q' key.  You will see valgrind
+complain about a fair amount of indirectly lost memory:
+
+==3548== LEAK SUMMARY:
+==3548==    definitely lost: 632 bytes in 32 blocks
+==3548==    indirectly lost: 2,098,016 bytes in 5 blocks
+==3548==      possibly lost: 0 bytes in 0 blocks
+==3548==    still reachable: 6,085,819 bytes in 57,852 blocks
+==3548==
+
+My guess is that you're not freeing up your images and/or the quadTrees
+before exiting.  Looking at the KeyboardEvent::action method:
+
+    if (key == 'q' || key == ESCAPE_KEY) {
+        // Here you will do your cleanup processing
+
+        glutLeaveMainLoop();
+    }
+
+You leave the main loop without calling a destructor.
+
+I score you 125/130 with the opportunity to receive 10 points if you send me
+an evaluation for yourself and your team mate by Friday, Apr. 7.  The 
+evaluation should rate each in the categories of:
+
+Communications      : 1 2 3 4
+Work Quality        : 1 2 3 4
+Overall Satisfaction: 1 2 3 4
+
+Scale: 1-deficient, 2-needs some work, 3-solid marks, 4-exemplary
+
+Comments concerning how things went in general are welcome.
+
+
