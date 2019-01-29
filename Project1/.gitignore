@@ -1,0 +1,6 @@
+*.gch
+*.o
+*.d
+*.swp
+main
+paint
